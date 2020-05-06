@@ -27,5 +27,5 @@ define(['skylark-mrdoobui'], function (mrdoobui) {
         options.add(option);
         return container;
     };
-    return { MenubarHelp };
+    return MenubarHelp;
 });

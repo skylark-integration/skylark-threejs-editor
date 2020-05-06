@@ -181,5 +181,5 @@ define([
         }
         return container;
     };
-    return { SidebarProject };
+    return SidebarProject;
 });

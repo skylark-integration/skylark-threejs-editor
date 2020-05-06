@@ -73,5 +73,5 @@ define([
         signals.scriptChanged.add(update);
         return container;
     };
-    return { SidebarScript };
+    return SidebarScript ;
 });

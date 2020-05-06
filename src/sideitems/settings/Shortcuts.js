@@ -95,5 +95,5 @@ define([
         }, false);
         return container;
     };
-    return { SidebarSettingsShortcuts };
+    return SidebarSettingsShortcuts;
 });

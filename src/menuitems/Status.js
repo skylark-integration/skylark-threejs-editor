@@ -30,5 +30,5 @@ define([
         container.add(version);
         return container;
     };
-    return { MenubarStatus };
+    return MenubarStatus;
 });

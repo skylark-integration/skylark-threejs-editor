@@ -46,5 +46,5 @@ define([
         container.add(new SidebarSettingsViewport(editor));
         return container;
     };
-    return { SidebarSettings };
+    return SidebarSettings;
 });

@@ -907,5 +907,5 @@ define([
         ].join('\n');
         return container;
     };
-    return { SidebarMaterial };
+    return SidebarMaterial;
 });

@@ -70,5 +70,5 @@ define([
         });
         return container;
     };
-    return { SidebarHistory };
+    return SidebarHistory;
 });

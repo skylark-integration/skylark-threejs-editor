@@ -231,5 +231,5 @@ define([
         });
         return container;
     };
-    return { SidebarScene };
+    return SidebarScene;
 });

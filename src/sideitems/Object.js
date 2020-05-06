@@ -438,5 +438,5 @@ define([
         }
         return container;
     };
-    return { SidebarObject };
+    return SidebarObject;
 });

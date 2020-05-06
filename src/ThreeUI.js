@@ -15,7 +15,15 @@ define([
 
 
 
-	const { UIElement, UISpan, UIDiv, UIRow, UIButton, UICheckbox, UIText, UINumber } = mrdoobui;
+	const 
+		UIElement = mrdoobui.UIElement, 
+		UISpan = mrdoobui.UISpan, 
+		UIDiv = mrdoobui.UIDiv, 
+		UIRow = mrdoobui.UIRow, 
+		UIButton = mrdoobui.UIButton, 
+		UICheckbox = mrdoobui.UICheckbox, 
+		UIText = mrdoobui.UIText, 
+		UINumber  = mrdoobui.UINumber;
 
 	/**
 	 * @author mrdoob / http://mrdoob.com/

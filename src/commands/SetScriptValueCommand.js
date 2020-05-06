@@ -41,5 +41,5 @@ define(['../Command'], function (Command) {
             this.script = this.editor.scripts[json.objectUuid][json.index];
         }
     };
-    return { SetScriptValueCommand };
+    return SetScriptValueCommand;
 });

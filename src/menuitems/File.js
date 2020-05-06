@@ -283,5 +283,5 @@ define([
         }
         return container;
     };
-    return { MenubarFile };
+    return MenubarFile;
 });

@@ -15,5 +15,5 @@ define([
         container.select('object');
         return container;
     };
-    return { SidebarProperties };
+    return SidebarProperties;
 });

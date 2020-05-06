@@ -56,5 +56,5 @@ define([
             }
         }
     };
-    return { SetSceneCommand };
+    return SetSceneCommand;
 });

@@ -13,8 +13,8 @@ define([
     TransformControls, 
     mrdoobui,
     EditorControls,
-    ViewportCameraCamera, 
-    ViewportInfoInfo, 
+    ViewportCamera, 
+    ViewportInfo, 
     SetPositionCommand, 
     SetRotationCommand,
     SetScaleCommand
@@ -25,8 +25,8 @@ define([
         var container = new mrdoobui.UIPanel();
         container.setId('viewport');
         container.setPosition('absolute');
-        container.add(new d.ViewportCamera(editor));
-        container.add(new e.ViewportInfo(editor));
+        container.add(new ViewportCamera(editor));
+        container.add(new ViewportInfo(editor));
         var renderer = null;
         var pmremGenerator = null;
         var camera = editor.camera;
@@ -50,7 +50,7 @@ define([
         var objectPositionOnDown = null;
         var objectRotationOnDown = null;
         var objectScaleOnDown = null;
-        var transformControls = new a.TransformControls(camera, container.dom);
+        var transformControls = new TransformControls(camera, container.dom);
         transformControls.addEventListener('change', function () {
             var object = transformControls.object;
             if (object !== undefined) {
@@ -76,17 +76,17 @@ define([
                 switch (transformControls.getMode()) {
                 case 'translate':
                     if (!objectPositionOnDown.equals(object.position)) {
-                        editor.execute(new f.SetPositionCommand(editor, object, object.position, objectPositionOnDown));
+                        editor.execute(new SetPositionCommand(editor, object, object.position, objectPositionOnDown));
                     }
                     break;
                 case 'rotate':
                     if (!objectRotationOnDown.equals(object.rotation)) {
-                        editor.execute(new g.SetRotationCommand(editor, object, object.rotation, objectRotationOnDown));
+                        editor.execute(new SetRotationCommand(editor, object, object.rotation, objectRotationOnDown));
                     }
                     break;
                 case 'scale':
                     if (!objectScaleOnDown.equals(object.scale)) {
-                        editor.execute(new h.SetScaleCommand(editor, object, object.scale, objectScaleOnDown));
+                        editor.execute(new SetScaleCommand(editor, object, object.scale, objectScaleOnDown));
                     }
                     break;
                 }
@@ -163,7 +163,7 @@ define([
         container.dom.addEventListener('mousedown', onMouseDown, false);
         container.dom.addEventListener('touchstart', onTouchStart, false);
         container.dom.addEventListener('dblclick', onDoubleClick, false);
-        var controls = new c.EditorControls(camera, container.dom);
+        var controls = new EditorControls(camera, container.dom);
         controls.addEventListener('change', function () {
             signals.cameraChanged.dispatch(camera);
         });
