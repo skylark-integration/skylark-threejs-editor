@@ -1,0 +1,9 @@
+/**
+ * skylark-threejs-editor - A version of threejs-editor that ported to running on skylarkjs
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-integration/skylark-threejs-editor/
+ * @license MIT
+ */
+define(["../Command"],function(t){"use strict";var e=function(e,i,n,d){t.call(this,e),this.type="MoveObjectCommand",this.name="Move Object",this.object=i,this.oldParent=void 0!==i?i.parent:void 0,this.oldIndex=void 0!==this.oldParent?this.oldParent.children.indexOf(this.object):void 0,this.newParent=n,this.newIndex=void 0!==d?void 0!==n?n.children.indexOf(d):void 0:void 0!==n?n.children.length:void 0,this.oldParent===this.newParent&&this.newIndex>this.oldIndex&&this.newIndex--,this.newBefore=d};return e.prototype={execute:function(){this.oldParent.remove(this.object),this.newParent.children.splice(this.newIndex,0,this.object),this.object.parent=this.newParent,this.editor.signals.sceneGraphChanged.dispatch()},undo:function(){this.newParent.remove(this.object),this.oldParent.children.splice(this.oldIndex,0,this.object),this.object.parent=this.oldParent,this.editor.signals.sceneGraphChanged.dispatch()},toJSON:function(){var e=t.prototype.toJSON.call(this);return e.objectUuid=this.object.uuid,e.newParentUuid=this.newParent.uuid,e.oldParentUuid=this.oldParent.uuid,e.newIndex=this.newIndex,e.oldIndex=this.oldIndex,e},fromJSON:function(e){t.prototype.fromJSON.call(this,e),this.object=this.editor.objectByUuid(e.objectUuid),this.oldParent=this.editor.objectByUuid(e.oldParentUuid),void 0===this.oldParent&&(this.oldParent=this.editor.scene),this.newParent=this.editor.objectByUuid(e.newParentUuid),void 0===this.newParent&&(this.newParent=this.editor.scene),this.newIndex=e.newIndex,this.oldIndex=e.oldIndex}},e});
+//# sourceMappingURL=../sourcemaps/commands/MoveObjectCommand.js.map

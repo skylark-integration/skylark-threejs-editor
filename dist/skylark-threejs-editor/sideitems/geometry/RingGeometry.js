@@ -1,0 +1,9 @@
+/**
+ * skylark-threejs-editor - A version of threejs-editor that ported to running on skylarkjs
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-integration/skylark-threejs-editor/
+ * @license MIT
+ */
+define(["skylark-threejs","skylark-mrdoobui","../../commands/SetGeometryCommand"],function(e,t,a){"use strict";return function(n,r){var d=n.strings,g=new t.UIRow,i=r.geometry.parameters,s=new t.UIRow,o=new t.UINumber(i.innerRadius).onChange(b);s.add(new t.UIText(d.getKey("sidebar/geometry/ring_geometry/innerRadius")).setWidth("90px")),s.add(o),g.add(s);var m=new t.UIRow,w=new t.UINumber(i.outerRadius).onChange(b);m.add(new t.UIText(d.getKey("sidebar/geometry/ring_geometry/outerRadius")).setWidth("90px")),m.add(w),g.add(m);var h=new t.UIRow,u=new t.UIInteger(i.thetaSegments).setRange(3,1/0).onChange(b);h.add(new t.UIText(d.getKey("sidebar/geometry/ring_geometry/thetaSegments")).setWidth("90px")),h.add(u),g.add(h);var y=new t.UIRow,U=new t.UIInteger(i.phiSegments).setRange(3,1/0).onChange(b);y.add(new t.UIText(d.getKey("sidebar/geometry/ring_geometry/phiSegments")).setWidth("90px")),y.add(U),g.add(y);var I=new t.UIRow,R=new t.UINumber(i.thetaStart*e.MathUtils.RAD2DEG).setStep(10).onChange(b);I.add(new t.UIText(d.getKey("sidebar/geometry/ring_geometry/thetastart")).setWidth("90px")),I.add(R),g.add(I);var l=new t.UIRow,x=new t.UINumber(i.thetaLength*e.MathUtils.RAD2DEG).setStep(10).onChange(b);function b(){n.execute(new a(n,r,new e.RingBufferGeometry(o.getValue(),w.getValue(),u.getValue(),U.getValue(),R.getValue()*e.MathUtils.DEG2RAD,x.getValue()*e.MathUtils.DEG2RAD)))}return l.add(new t.UIText(d.getKey("sidebar/geometry/ring_geometry/thetalength")).setWidth("90px")),l.add(x),g.add(l),g}});
+//# sourceMappingURL=../../sourcemaps/sideitems/geometry/RingGeometry.js.map
